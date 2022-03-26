@@ -9,7 +9,7 @@ $(document).ready(function () {
    setInterval(time, 1000);
 
     $(".saveBtn").on("click", function () {
-        //get nearby values.
+     
         console.log(this);
         var text = $(this).siblings(".task").val();
         var time = $(this).parent().attr("id");
@@ -18,7 +18,7 @@ $(document).ready(function () {
         window.alert('Your task has been saved!');
         console.log('The button has been clicked!');
     })
-    //load any saved data from LocalStorage - do this for each hour created.
+    //We need to load the data from each storage to display it correctly
     $("#hour7 .task").val(localStorage.getItem("hour7"));
     $("#hour8 .task").val(localStorage.getItem("hour8"));
     $("#hour9 .task").val(localStorage.getItem("hour9"));
@@ -34,6 +34,7 @@ $(document).ready(function () {
     $("#hour19 .task").val(localStorage.getItem("hour19"));
 
 
+    // Check which hour it is and Colour code it accordingly
     function hourTracker() {
         //get current number of hours.
         var currentHour = moment().hour();
