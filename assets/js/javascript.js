@@ -36,14 +36,13 @@ $(document).ready(function () {
 
     // Check which hour it is and Colour code it accordingly
     function hourTracker() {
-        //get current number of hours.
+        //Get the current number of hours
         var currentHour = moment().hour();
 
         // loop over time blocks
         $(".time-block").each(function () {
             var blockHour = parseInt($(this).attr("id").split("hour")[1]);
-            console.log( blockHour, currentHour)
-
+            
             //check if we've moved past this time
             if (blockHour < currentHour) {
                 $(this).addClass("past");
